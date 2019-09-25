@@ -24,6 +24,9 @@
     </script>
     <div class="bg-image"></div>
     <body onload="showCurrentTime()">
+	<?php
+	echo 'hello this is echod from php'
+	?>
         <div class="bg-image"></div>
         <div id="txt"></div>
 		<p>(test)</p>
