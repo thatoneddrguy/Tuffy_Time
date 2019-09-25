@@ -1,0 +1,27 @@
+
+
+.bg-image {
+    background-image: url("background.jpg");
+
+    /* add blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    text-align: center;
+    
+    height: 1000px;
+
+    /* center background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html , body {
+    height:100%;
+}
+
+.test {
+    background-color: black;
+    color: aliceblue;
+}

@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Tuffy Time Portal</title>
-    
-    
+    <link rel="stylesheet" href="style.css">
 </head>
     <script>
+        // constantly shows the time
         function showCurrentTime()
         {
             var current = new Date();
@@ -22,11 +22,10 @@
             var t = setTimeout(showCurrentTime,500); //updates the timer every second
         }
     </script>
-    <div class="bg-image"></div>
-    <body onload="showCurrentTime()">
-        <div class="bg-image"></div>
-        <div id="txt"></div>
-    </body>
     <body>
+        <div class="bg-image" id="txt">
+            <script>showCurrentTime();</script>
+        </div>
+        <div class="bg-image"></div>
     </body>
 </html>
