@@ -26,6 +26,5 @@
         <div class="bg-image" id="txt">
             <script>showCurrentTime();</script>
         </div>
-        <div class="bg-image"></div>
     </body>
 </html>
