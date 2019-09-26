@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Tuffy Time Portal</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="include/style.css">
 </head>
     <script>
         // constantly shows the time
