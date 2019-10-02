@@ -18,13 +18,22 @@
             minutes = minutes < 10 ? '0' + minutes : minutes; // if minutes is less than 10 then add 0
             seconds = seconds < 10 ? '0' + seconds : seconds; // same as minutes  
             var currentTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
-            document.getElementById('txt').innerHTML = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            document.getElementById('txt').innerHTML = currentTime;
             var t = setTimeout(showCurrentTime,500); //updates the timer every second
         }
     </script>
     <body>
-        <div class="bg-image" id="txt">
-            <script>showCurrentTime();</script>
+        <div class="bg-image"></div>
+
+        <div class="login">
+            Tuffy Time Portal
+            <div id="txt">
+                <script>showCurrentTime(); </script>
+            </div>
+            <form action="" method="post">
+		        <input type="text" name="ssn" placeholder="Enter ID"> <br>
+		    <input type="submit" value="Login">
+	        </form>	
         </div>
     </body>
 </html>
