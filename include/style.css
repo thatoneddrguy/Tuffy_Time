@@ -22,14 +22,14 @@
 
 /* This is for the CSUF Logo on the login page*/
 .logo {
-    width: 50%;
+    width: 70%;
     height: 20%;
 }
 
 /* Login UI Box */
 .login {
-    background-color: rgb(255, 255, 255);
-    color: black;
+    background-color: #fcf9ea;
+    color: #3c70a4;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -39,10 +39,13 @@
     text-align: center;
     padding: 10px;
     border-radius: 5%;
+    font-family: 'Roboto';
+    font-size: 1.5rem;
 }
 
 input {
     text-align: center;
+    font-size: 1.5rem;
 }
 
 /* Login Button */
