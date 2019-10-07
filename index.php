@@ -4,7 +4,7 @@
     <title>Tuffy Time Portal</title>
     <link rel="stylesheet" href="include/style.css">
 	<?php
-	/*$endpoint = 'tuffy-time.c17u2x0cmg40.us-east-1.rds.amazonaws.com';
+	$endpoint = 'tuffy-time.c17u2x0cmg40.us-east-1.rds.amazonaws.com';
 	$username = 'admin';
 	$password = 'ywC3k62WU9Uq';
 	$dbname = 'Tuffy-Time';
@@ -13,7 +13,7 @@
 	{
 		die("<!--Could not connect: ".mysqli_error()."-->");
 	}
-	echo "<!--Connected successfully.-->";*/
+	echo "<!--Connected successfully.-->";
 	?>
 </head>
     <script>
@@ -36,8 +36,8 @@
     </script>
     <body>
         <div class="bg-image"></div>
-
         <div class="login">
+            <img src="images/csuf-logo-rgb.png" alt="csuf logo" class="logo"><br>
             Tuffy Time Portal
             <div id="txt">
                 <script>showCurrentTime(); </script>
