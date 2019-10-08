@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Tuffy Time Portal</title>
-    <link rel="stylesheet" href="include/style.css">
-    <!-- This link is for being able to use the "Roboto font" -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-	<?php
-	$endpoint = 'tuffy-time.c17u2x0cmg40.us-east-1.rds.amazonaws.com';
-	$username = 'admin';
-	$password = 'ywC3k62WU9Uq';
-	$dbname = 'Tuffy-Time';
-	$link = mysqli_connect($endpoint, $username, $password, $dbname);
-	if(!$link)
-	{
-		die("<!--Could not connect: ".mysqli_error()."-->");
-	}
-	echo "<!--Connected successfully.-->";
-	?>
-</head>
+	<head>
+		<title>Tuffy Time Portal</title>
+		<link rel="stylesheet" href="include/style.css">
+		<!-- This link is for being able to use the "Roboto font" -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	</head>
     <script>
         // constantly shows the time
         function showCurrentTime()
@@ -44,8 +32,8 @@
                 <script>showCurrentTime(); </script>
             </div>
             <p>Tuffy Time Portal</p> 
-            <form action="" method="post">
-		        <input type="text" name="ssn" placeholder="Enter ID"> <br>
+            <form action="home.php" method="post">
+		        <input type="text" name="cwid" placeholder="Enter ID"> <br>
 		    <input type="submit" value="Login">
 	        </form>	
         </div>
