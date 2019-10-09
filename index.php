@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Tuffy Time Portal</title>
-		<link rel="stylesheet" href="include/index_style.css">
+		<link rel="stylesheet" href="include/style.css">
 		<!-- This link is for being able to use the "Roboto font" -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	</head>
@@ -24,7 +24,7 @@
             var t = setTimeout(showCurrentTime,500); //updates the timer every second
         }
     </script>
-    <body>
+    <body class="index-body">
         <div class="bg-image"></div>
         <div class="login">
             <img src="images/csuf-logo-rgb.png" alt="csuf logo" class="logo">

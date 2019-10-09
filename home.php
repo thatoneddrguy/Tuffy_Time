@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Home Page</title>
-		<link rel="stylesheet" href="include/home_style.css">
+		<link rel="stylesheet" href="include/style.css">
 		<!-- This link is for being able to use the "Roboto font" -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 		<?php
@@ -33,7 +33,7 @@
 		}
 		?>
 	</head>
-	<body>
+	<body class="home-body">
         <!--
 		<div class="bg-image"></div>
         <div class="login">
