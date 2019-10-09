@@ -31,9 +31,15 @@
             <div id="txt">
                 <script>showCurrentTime(); </script>
             </div>
-            <p>Tuffy Time Portal</p> 
+            <p>Tuffy Time Portal</p>
+			<?php
+			if (isset($_GET["login"]) && htmlspecialchars($_GET["login"]) == "invalid")
+			{
+				echo "<p class='error'>Invalid CWID, try again.</p>";
+			}
+			?>
             <form action="home.php" method="post">
-		        <input type="text" name="cwid" placeholder="Enter ID"> <br>
+		        <input type="text" name="cwid" placeholder="Enter ID" maxlength="9" required> <br>
 		    <input type="submit" value="Login">
 	        </form>	
         </div>

@@ -16,6 +16,21 @@
 			die("<!--Could not connect: ".mysqli_error()."-->");
 		}
 		echo "<!--Connected successfully.-->";
+
+		if ($_POST["cwid"] != "")
+		{
+			$result = mysqli_query($link, "SELECT * FROM EMPLOYEES WHERE CWID=".$_POST["cwid"].";");
+
+			if(mysqli_num_rows($result) == 0)  // no CWID match in EMPLOYEES table
+			{
+				header('Location: index.php?login=invalid');
+			}
+			else
+			{
+				$row = mysqli_fetch_row($result);
+				$name = $row[1];
+			}
+		}
 		?>
 	</head>
 	<body>
@@ -34,6 +49,6 @@
 			<li><a href="index.php">Log Out</a></li>
 		</ul>
 		<br>
-		<h1>Welcome!</h1> 
+		<h1>Welcome, <?php echo $name ?>!</h1> 
     </body>
 </html>

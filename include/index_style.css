@@ -43,6 +43,12 @@
     font-size: 1.5rem;
 }
 
+/* Error messages */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
 input {
     text-align: center;
     font-size: 1.5rem;
