@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Tuffy Time Portal</title>
-		<link rel="stylesheet" href="include/style.css">
+		<link rel="stylesheet" href="include/index_style.css">
 		<!-- This link is for being able to use the "Roboto font" -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	</head>
