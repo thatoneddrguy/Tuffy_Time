@@ -13,7 +13,15 @@
         ?>
     </head>
 
-    <body>
+    <body class="home-body">
+        <div class="menu_image"></div>
+		<ul>
+			<li><a href="home.php">Home</a></li>
+			<li><a href="schedule.php">Schedule</a></li>
+			<li><a href="">Hours</a></li>
+			<li><a href="index.php">Log Out</a></li>
+		</ul>
+		<br>
         <h1><?php echo $name ?>'s Weekly Schedule</h1> 
     </body>
 
