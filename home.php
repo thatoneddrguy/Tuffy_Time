@@ -6,6 +6,9 @@
 		<!-- This link is for being able to use the "Roboto font" -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 		<?php
+		// save name using SESSION
+		session_start();
+
 		$endpoint = 'tuffy-time.c17u2x0cmg40.us-east-1.rds.amazonaws.com';
 		$username = 'admin';
 		$password = 'ywC3k62WU9Uq';
@@ -29,8 +32,16 @@
 			{
 				$row = mysqli_fetch_row($result);
 				$name = $row[1];
+
+				// save $name variable using SESSION
+				$_SESSION['user_name'] = $name;
+
 			}
 		}
+
+		// grab data from SESSION
+		$name = $_SESSION['user_name'];
+
 		?>
 	</head>
 	<body class="home-body">
@@ -44,7 +55,7 @@
 		<div class="menu_image"></div>
 		<ul>
 			<li><a href="home.php">Home</a></li>
-			<li><a href="">Schedule</a></li>
+			<li><a href="schedule.php">Schedule</a></li>
 			<li><a href="">Hours</a></li>
 			<li><a href="index.php">Log Out</a></li>
 		</ul>
