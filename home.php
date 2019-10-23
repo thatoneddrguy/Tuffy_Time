@@ -20,7 +20,7 @@
 		}
 		echo "<!--Connected successfully.-->";
 
-		if ($_POST["cwid"] != "")
+		if (isset($_POST["cwid"]))
 		{
 			$result = mysqli_query($link, "SELECT * FROM EMPLOYEES WHERE CWID=".$_POST["cwid"].";");
 
