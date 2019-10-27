@@ -13,14 +13,35 @@
         ?>
     </head>
 
+    <script>
+		// clock in function
+		function clockIn()
+		{
+			if (confirm("Are you sure you want to clock in?"))
+			{
+				alert("You are now clocked in!");
+			}
+		}
+
+		// clock out function 
+		function clockOut()
+		{
+			if (confirm("Are you sure you want to clock out?"))
+			{
+				alert("You are now clocked out.\n Have a good day!");
+			}
+		}
+	
+	</script>
+
     <body class="home-body">
         <div class="menu_image"></div>
 		<ul>
 			<li><a href="home.php">Home</a></li>
 			<li><a class="active" href="schedule.php">Schedule</a></li>
             <li><a href="hours.php">Hours</a></li>
-            <li><a href="">Clock In</a></li>
-            <li><a href="">Clock Out</a></li>
+            <li><a onclick="clockIn()">Clock In</a></li>
+            <li><a onclick="clockOut()">Clock Out</a></li>
 			<li><a href="index.php">Log Out</a></li>
 		</ul>
 		<br>
