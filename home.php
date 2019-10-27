@@ -54,12 +54,14 @@
 		-->
 		<div class="menu_image"></div>
 		<ul>
-			<li><a href="home.php">Home</a></li>
+			<li><a class="active" href="home.php">Home</a></li>
 			<li><a href="schedule.php">Schedule</a></li>
-			<li><a href="">Hours</a></li>
+			<li><a href="hours.php">Hours</a></li>
+			<li><a href="">Clock In</a></li>
+            <li><a href="">Clock Out</a></li>
 			<li><a href="index.php">Log Out</a></li>
 		</ul>
 		<br>
-		<h1>Welcome, <?php echo $name ?>!</h1> 
+		<h1> Welcome, <?php echo $name ?>!</h1> 
     </body>
 </html>

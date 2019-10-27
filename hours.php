@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Schedule</title>
+        <title>My Hours</title>
         <link rel="stylesheet" href="include/style.css">
 		<!-- This link is for being able to use the "Roboto font" -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -17,14 +17,14 @@
         <div class="menu_image"></div>
 		<ul>
 			<li><a href="home.php">Home</a></li>
-			<li><a class="active" href="schedule.php">Schedule</a></li>
-            <li><a href="hours.php">Hours</a></li>
+			<li><a href="schedule.php">Schedule</a></li>
+            <li><a class="active" href="hours.php">Hours</a></li>
             <li><a href="">Clock In</a></li>
             <li><a href="">Clock Out</a></li>
 			<li><a href="index.php">Log Out</a></li>
 		</ul>
 		<br>
-        <h1><?php echo $name ?>'s Weekly Schedule</h1> 
+        <h1><?php echo $name ?>'s Logged Hours</h1> 
     </body>
 
 </html>

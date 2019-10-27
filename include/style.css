@@ -1,5 +1,6 @@
 
 /* Set a Blurry Background Image for Login PAage */
+
 .bg-image {
     background-image: url("../images/background.jpg");
 
@@ -118,6 +119,15 @@ li:last-child {
     border-right: none;
 } 
 
+/* Highlights button of current page */
+.active {
+    background-color: #1089ff;
+}
+
 li a:hover {
     background-color: #1089ff;
+}
+
+h1 {
+    font-family: "Roboto";
 }
