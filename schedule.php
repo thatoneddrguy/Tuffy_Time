@@ -17,19 +17,22 @@
 		// clock in function
 		function clockIn()
 		{
-			if (confirm("Are you sure you want to clock in?"))
+			<?php 
+			echo "if (confirm('Are you sure you want to clock in?'))
 			{
-				alert("You are now clocked in!");
-			}
+				alert('You are now clocked in!');
+			} ";
+			?>
 		}
 
 		// clock out function 
 		function clockOut()
 		{
-			if (confirm("Are you sure you want to clock out?"))
+			<?php echo "if (confirm('Are you sure you want to clock out?'))
 			{
-				alert("You are now clocked out.\n Have a good day!");
-			}
+				alert('You are now clocked out. Have a good day!');
+			} ";
+			?>
 		}
 	
 	</script>
