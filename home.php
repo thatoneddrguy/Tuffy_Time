@@ -40,9 +40,9 @@
 		function clockIn()
 		{
 			<?php
-			$date = date('Y-m-d H:i:s'); 
+			//$date = date('Y-m-d H:i:s'); 
 			//$insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN) VALUES (111222333, '.$date.')"); 
-			$insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN, CLOCK_OUT) VALUES (111222333, '2019-10-31 12:22:20', '2019-11-01 12:22:20')"); 
+			//$insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN, CLOCK_OUT) VALUES (111222333, '2019-10-31 12:22:20', '2019-11-01 12:22:20')"); 
 			echo "if (confirm('Are you sure you want to clock in?'))
 			{
 				alert('You are now clocked in!');

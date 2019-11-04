@@ -18,12 +18,10 @@
 		// clock in function
 		function clockIn()
 		{
-			<?php 
-			echo "if (confirm('Are you sure you want to clock in?'))
+			if (confirm('Are you sure you want to clock in?'))
 			{
-				alert('You are now clocked in!');
-			} ";
-			?>
+				window.open("clockIn.php", "_self");
+			} 
 		}
 
 		// clock out function 
