@@ -5,20 +5,9 @@
 		<link rel="stylesheet" href="include/style.css">
 		<!-- This link is for being able to use the "Roboto font" -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<?php include 'include/connect.php'; ?>
 		<?php
 		// save name using SESSION
-		session_start();
-
-		$endpoint = 'tuffy-time.c17u2x0cmg40.us-east-1.rds.amazonaws.com';
-		$username = 'admin';
-		$password = 'ywC3k62WU9Uq';
-		$dbname = 'Tuffy-Time';
-		$link = mysqli_connect($endpoint, $username, $password, $dbname);
-		if(!$link)
-		{
-			die("<!--Could not connect: ".mysqli_error()."-->");
-		}
-		echo "<!--Connected successfully.-->";
 
 		if (isset($_POST["cwid"]))
 		{

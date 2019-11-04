@@ -5,9 +5,10 @@
         <link rel="stylesheet" href="include/style.css">
 		<!-- This link is for being able to use the "Roboto font" -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<?php include 'include/connect.php'; ?>
         <?php
             // start SESSION and grab $name and $link variable from SESSION
-            session_start();
+            //session_start();  // already called in connect.php
 			$name = $_SESSION['user_name'];
 			$link = $_SESSION['db_link'];
 
