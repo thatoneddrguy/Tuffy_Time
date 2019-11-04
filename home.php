@@ -33,8 +33,9 @@
 				$row = mysqli_fetch_row($result);
 				$name = $row[1];
 
-				// save $name variable using SESSION
+				// save $name and $link variables using SESSION
 				$_SESSION['user_name'] = $name;
+				$_SESSION['db_link'] = $link;
 
 			}
 		}
@@ -51,7 +52,8 @@
 		{
 			<?php
 			$date = date('Y-m-d H:i:s'); 
-			$insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN) VALUES (111222333, '.$date.')"); 
+			//$insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN) VALUES (111222333, '.$date.')"); 
+			$insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN, CLOCK_OUT) VALUES (111222333, '2019-10-31 12:22:20', '2019-11-01 12:22:20')"); 
 			echo "if (confirm('Are you sure you want to clock in?'))
 			{
 				alert('You are now clocked in!');
