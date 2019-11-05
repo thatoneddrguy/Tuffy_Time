@@ -4,20 +4,17 @@
     <title>Clock In</title>
 </head>
 
-
 <script>
     <?php
     include "include/connect.php";
-    $date = date('Y-m-d H:i:s');
-    echo $date; 
-    $insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN) VALUES (111222333, convert(datetime, $date))"); 
+    $cwid = $_SESSION['CWID'];
+    $insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN) VALUES ($cwid, convert_tz(now(), 'UTC', 'America/Los_Angeles'))"); 
     echo mysqli_error($link);
     ?>
-
     function clockIn()
     {
         alert("You are now clocked in!");
-        //window.open("home.php","_self");
+        window.open("home.php","_self");
     }
 
 </script>

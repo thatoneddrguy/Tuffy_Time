@@ -25,6 +25,7 @@
 				// save $name and $link variables using SESSION
 				$_SESSION['user_name'] = $name;
 				$_SESSION['db_link'] = $link;
+				$_SESSION['CWID'] = $_POST["cwid"];
 
 			}
 		}
@@ -39,37 +40,24 @@
 		// clock in function
 		function clockIn()
 		{
-			<?php
-			//$date = date('Y-m-d H:i:s'); 
-			//$insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN) VALUES (111222333, '.$date.')"); 
-			//$insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN, CLOCK_OUT) VALUES (111222333, '2019-10-31 12:22:20', '2019-11-01 12:22:20')"); 
-			echo "if (confirm('Are you sure you want to clock in?'))
+			if (confirm('Are you sure you want to clock in?'))
 			{
-				alert('You are now clocked in!');
-			} ";
-			?>
+				window.open("clockIn.php", "_self");
+			} 
 		}
 
 		// clock out function 
 		function clockOut()
 		{
-			<?php echo "if (confirm('Are you sure you want to clock out?'))
+			if (confirm('Are you sure you want to clock out?'))
 			{
-				alert('You are now clocked out. Have a good day!');
-			} ";
-			?>
+				window.open("clockOut.php", "_self");
+			} 
 		}
 	
 	</script>
 
 	<body class="home-body">
-        <!--
-		<div class="bg-image"></div>
-        <div class="login">
-            <h1>Welcome</h1>
-			<p>(Schedule info, hours worked, useful links?)</p>
-        </div>
-		-->
 		<div class="menu_image"></div>
 		<ul>
 			<li><a class="active" href="home.php">Home</a></li>

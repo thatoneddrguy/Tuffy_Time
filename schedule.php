@@ -27,11 +27,10 @@
 		// clock out function 
 		function clockOut()
 		{
-			<?php echo "if (confirm('Are you sure you want to clock out?'))
+			if (confirm('Are you sure you want to clock out?'))
 			{
-				alert('You are now clocked out. Have a good day!');
-			} ";
-			?>
+				window.open("clockOut.php", "_self");
+			} 
 		}
 	
 	</script>
