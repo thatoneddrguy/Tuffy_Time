@@ -15,7 +15,28 @@
     <body class="home-body">
         <?php include "include/header.php" ?>
 		<br>
-        <h1><?php echo $name ?>'s Logged Hours</h1> 
+        <h1><?php echo $name ?>'s Logged Hours</h1>
+		<?php
+			$result = mysqli_query($link, "SELECT * FROM HOURS_WORKED WHERE CWID=".$_SESSION['CWID'].";");
+
+			if(mysqli_num_rows($result) == 0)  // no CWID match in EMPLOYEES table
+			{
+				echo "No logged hours for ".$name;
+			}
+			else
+			{
+				echo "<table>";
+				while ($row = $result->fetch_array(MYSQLI_ASSOC))
+				{
+					echo "<tr>";
+					echo "<td>".$row["CWID"];
+					echo "<td>".$row["CLOCK_IN"];
+					echo "<td>".$row["CLOCK_OUT"];
+					echo "</tr>";
+				}
+				echo "</table>";
+			}
+		?>
     </body>
 
 </html>
