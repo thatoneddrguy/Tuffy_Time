@@ -17,11 +17,11 @@
 		<br>
         <h1><?php echo $name ?>'s Logged Hours</h1>
 		<?php
-			$result = mysqli_query($link, "SELECT * FROM HOURS_WORKED WHERE CWID=".$_SESSION['CWID'].";");
+			$result = mysqli_query($link, "SELECT * FROM HOURS_WORKED WHERE CWID=".$_SESSION['CWID']." ORDER BY CLOCK_IN ASC;");
 
 			if(mysqli_num_rows($result) == 0)  // no CWID match in EMPLOYEES table
 			{
-				echo "No logged hours for ".$name;
+				echo "No logged hours found for ".$name;
 			}
 			else
 			{
@@ -29,7 +29,6 @@
 				while ($row = $result->fetch_array(MYSQLI_ASSOC))
 				{
 					echo "<tr>";
-					echo "<td>".$row["CWID"];
 					echo "<td>".$row["CLOCK_IN"];
 					echo "<td>".$row["CLOCK_OUT"];
 					echo "</tr>";

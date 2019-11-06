@@ -15,7 +15,28 @@
     <body class="home-body">
 		<?php include "include/header.php" ?>
 		<br>
-        <h1><?php echo $name ?>'s Weekly Schedule</h1> 
+        <h1><?php echo $name ?>'s Weekly Schedule</h1>
+		<?php
+			$result = mysqli_query($link, "SELECT * FROM SCHEDULE WHERE CWID=".$_SESSION['CWID'].";");
+
+			if(mysqli_num_rows($result) == 0)  // no CWID match in EMPLOYEES table
+			{
+				echo "No schedule found for ".$name;
+			}
+			else
+			{
+				echo "<table>";
+				while ($row = $result->fetch_array(MYSQLI_ASSOC))
+				{
+					echo "<tr>";
+					echo "<td>".$row["DAY"];
+					echo "<td>".$row["START_TIME"];
+					echo "<td>".$row["END_TIME"];
+					echo "</tr>";
+				}
+				echo "</table>";
+			}
+		?>
     </body>
 
 </html>
