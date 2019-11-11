@@ -29,6 +29,6 @@
         <li><a <?php if($current_page == "hours.php") { echo 'class="active"';} ?> href="hours.php">Hours</a></li>
         <li><a onclick="clockIn()">Clock In</a></li>
         <li><a onclick="clockOut()">Clock Out</a></li>
-        <li><a href="index.php">Log Out</a></li>
+        <li><a href="logOut.php">Log Out</a></li>
     </ul>
 </div>

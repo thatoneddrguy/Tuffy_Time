@@ -33,15 +33,6 @@
             </div>
             <p>Tuffy Time Portal</p>
 			<?php
-
-            $_SESSION['loggedIn'] = false;
-
-            if (session_status() == 2)
-            {
-                session_destroy();
-                
-            }
-
 			if (isset($_GET["login"]) && htmlspecialchars($_GET["login"]) == "invalid")
 			{
 				echo "<p class='error'>Invalid CWID, try again.</p>";

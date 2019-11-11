@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	if(empty($_SESSION['loggedIn']))
+	{
+		header('Location: index.php');
+	}
 
 	$endpoint = 'tuffy-time.c17u2x0cmg40.us-east-1.rds.amazonaws.com';
 	$username = 'admin';

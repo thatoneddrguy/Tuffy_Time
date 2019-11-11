@@ -27,12 +27,6 @@
 				$_SESSION['loggedIn'] = true;
 			}
 		}
-
-		if (!$_SESSION['loggedIn'])
-		{
-			header('Location: index.php');
-		}
-
 		// grab data from SESSION
 		$name = $_SESSION['user_name'];
 		?>
