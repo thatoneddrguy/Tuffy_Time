@@ -9,8 +9,18 @@
     include "include/connect.php";
 
     $cwid = $_SESSION['CWID'];
-    $insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN) VALUES ($cwid, convert_tz(now(), 'UTC', 'America/Los_Angeles'))"); 
-    echo mysqli_error($link);
+
+    // check if user already clocked in
+    $result = mysqli_query($link, "SELECT * FROM HOURS_WORKED WHERE CLOCK_IN IS NOT NULL AND CLOCK_OUT IS NULL AND CWID = $cwid");
+    if (mysqli_num_rows($result) == 0)
+    {
+        $insert = mysqli_query($link, "INSERT INTO HOURS_WORKED (CWID, CLOCK_IN) VALUES ($cwid, convert_tz(now(), 'UTC', 'America/Los_Angeles'))");
+    }
+    else    
+    {   
+        // user already clocked in
+        header('location: home.php');
+    }
     ?>
     function clockIn()
     {
