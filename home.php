@@ -20,12 +20,17 @@
 				$row = mysqli_fetch_row($result);
 				$name = $row[1];
 
-				// save $name and $link variables using SESSION
+				// save variables using SESSION
 				$_SESSION['user_name'] = $name;
 				// $_SESSION['db_link'] = $link;  // $link saved in connect.php include
 				$_SESSION['CWID'] = $_POST["cwid"];
-
+				$_SESSION['loggedIn'] = true;
 			}
+		}
+
+		if (!$_SESSION['loggedIn'])
+		{
+			header('Location: index.php');
 		}
 
 		// grab data from SESSION
