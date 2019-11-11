@@ -7,6 +7,7 @@
 <script>
     <?php
     include "include/connect.php";
+    
     $cwid = $_SESSION['CWID'];
     mysqli_query($link, "UPDATE HOURS_WORKED SET CLOCK_OUT = convert_tz(now(), 'UTC', 'America/Los_Angeles') WHERE CLOCK_OUT IS NULL AND CWID = $cwid");
     echo mysqli_error($link);

@@ -1,5 +1,11 @@
 <?php
 	session_start();
+
+	if(isset($_POST['cwid']))
+	{
+		$_SESSION['loggedIn'] = true;
+	}
+
 	if(empty($_SESSION['loggedIn']))
 	{
 		header('Location: index.php');
