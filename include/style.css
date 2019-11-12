@@ -136,13 +136,14 @@ h1 {
 /* Styles for Header */
 
 #header_time {
-    float:right;
+    float: right;
 }
 
 #clock_in_status {
-    float:right;
-    position:relative;
-    top:20px;
+    float: right;
+    position: absolute;  /* would prefer to keep this relative but eh */
+    top: 20px;
+    right: 0px;
 }
 
 #clocked_in {
