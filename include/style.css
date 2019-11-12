@@ -138,3 +138,17 @@ h1 {
 #header_time {
     float:right;
 }
+
+#clock_in_status {
+    float:right;
+    position:relative;
+    top:20px;
+}
+
+#clocked_in {
+    color: green;
+}
+
+#clocked_out {
+    color: red;
+}
