@@ -131,3 +131,10 @@ li a:hover {
 h1 {
     font-family: "Roboto";
 }
+
+/* ======================================================= */
+/* Styles for Header */
+
+#header_time {
+    float:right;
+}
