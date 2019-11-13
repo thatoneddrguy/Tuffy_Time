@@ -11,6 +11,27 @@
             //session_start();  // already called in connect.php
             $name = $_SESSION['user_name'];
         ?>
+
+		<!-- FullCalendar CDN links -->
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.0/fullcalendar.css' />
+		<script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.0/fullcalendar.min.js'></script>
+		<script>
+			$(document).ready(function() {
+				// page is ready
+				$('#calendar').fullCalendar({
+					// calendar properties
+					//plugins: [ timeGridPlugin ],
+					//defaultView: 'timeGridWeek',
+					header: {
+						left: 'prev,next today',
+						center: 'title',
+						right: 'month,agendaWeek,agendaDay'
+					}
+				})
+			});
+		</script>
     </head>
     <body class="home-body">
 		<?php include "include/header.php" ?>
@@ -37,6 +58,7 @@
 				echo "</table>";
 			}
 		?>
+		<div id='calendar'></div>
     </body>
 
 </html>
