@@ -135,21 +135,30 @@ h1 {
 /* ======================================================= */
 /* Styles for Header */
 
-#header_time {
+/*#header_time {
     float: right;
-}
+}*/
 
-#clock_in_status {
-    float: right;
-    position: absolute;  /* would prefer to keep this relative but eh */
-    top: 20px;
+/* #clock_in_status { */
+    /*float: right;
+    position: absolute;*/  /* would prefer to keep this relative but eh */
+   /* top: 20px;
     right: 0px;
-}
+} */
 
 #clocked_in {
-    color: green;
+    color: #32ff6a;
 }
 
 #clocked_out {
-    color: red;
+    color: #ff0000;
+}
+
+.clock_in_status {
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 14px 40px;
+    font-family: "Roboto";
+    font-size: 17px;
 }

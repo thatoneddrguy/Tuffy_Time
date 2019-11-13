@@ -50,21 +50,21 @@
 ?>
 <div id="header">
     <div class="menu_image">
-		<div id="header_time"></div>
+		<!--<div class="header_time"></div>
 		<script>showCurrentTime();</script>
 		<div id="clock_in_status">
 			You are currently 
 			<?php
-				if($clock_in == 1)
+				/*if($clock_in == 1)
 				{
 					echo "<span id='clocked_in'>clocked in.</span>";
 				}
 				else
 				{
 					echo "<span id='clocked_out'>clocked out.</span>";
-				}
+				}*/
 			?>
-		</div>
+		</div>-->
 	</div>
     <ul>
         <li><a <?php if($current_page == "home.php") { echo 'class="active"';} ?> href="home.php">Home</a></li>
@@ -72,6 +72,20 @@
         <li><a <?php if($current_page == "hours.php") { echo 'class="active"';} ?> href="hours.php">Hours</a></li>
         <li><a onclick="clockIn()">Clock In</a></li>
         <li><a onclick="clockOut()">Clock Out</a></li>
+        <li class="clock_in_status"> Status: 
+            <?php
+				if($clock_in == 1)
+				{
+					echo "<span id='clocked_in'>Clocked In</span>";
+				}
+				else
+				{
+					echo "<span id='clocked_out'>Clocked Out</span>";
+				}
+            ?>
+            </li>
+        <li id="header_time" class="clock_in_status"> <script>showCurrentTime();</script>
+            </li>
         <li><a href="logOut.php">Log Out</a></li>
     </ul>
 </div>
