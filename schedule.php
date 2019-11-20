@@ -12,12 +12,7 @@
             $name = $_SESSION['user_name'];
         ?>
 
-		<!-- FullCalendar CDN links -->
-		<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.0/fullcalendar.css' />
-		<script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js'></script>
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.0/fullcalendar.min.js'></script> -->
-		
+		<!-- FullCalendar CDN links -->		
 		<link href='http://unpkg.com/@fullcalendar/core@4.3.0/main.css' rel='stylesheet' />
 		<link href='http://unpkg.com/@fullcalendar/daygrid@4.3.0/main.css' rel='stylesheet' />
 		<link href='http://unpkg.com/@fullcalendar/timegrid@4.3.0/main.css' rel='stylesheet' />
@@ -30,9 +25,18 @@
 				var calendarEl = document.getElementById('calendar');
 
 				var calendar = new FullCalendar.Calendar(calendarEl, {
-				  plugins: [ 'timeGrid' ]
+					plugins: [ 'timeGrid' ],
+					allDaySlot: false,
+					events: [
+						{
+							title: 'test',
+							daysOfWeek: ['1', '2'],
+							startTime: '09:00:00',
+							endTime: '12:00:00',
+							color: 'blue'
+						}
+					]
 				});
-
 				calendar.render();
 			});
 		</script>
