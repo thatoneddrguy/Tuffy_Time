@@ -179,8 +179,9 @@ h1 {
     padding-left: 12px;
 }
 
+
 #hours-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #cccccc;
 }
 
 #hours-table tr:hover {
