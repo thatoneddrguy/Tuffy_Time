@@ -33,7 +33,7 @@
 							daysOfWeek: ['1', '2'],
 							startTime: '09:00:00',
 							endTime: '12:00:00',
-							color: 'blue'
+							color: '#1089ff'
 						}
 					]
 				});
