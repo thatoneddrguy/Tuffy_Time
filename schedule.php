@@ -34,7 +34,23 @@
 							startTime: '09:00:00',
 							endTime: '12:00:00',
 							color: '#1089ff'
-						}
+						},
+						<?php
+							$result = mysqli_query($link, "SELECT * FROM SCHEDULE WHERE CWID=".$_SESSION['CWID'].";");
+
+							if(mysqli_num_rows($result) != 0)  // at least one CWID match in EMPLOYEES table
+							{
+								while ($row = $result->fetch_array(MYSQLI_ASSOC))
+								{
+									echo "{";
+									echo "daysOfWeek: ['1'],";  //echo "<td>".$row["DAY"];
+									echo "startTime: '".$row["START_TIME"]."',";
+									echo "endTime: '".$row["END_TIME"]."'";
+									echo "}";
+									echo ",";  // add ',' for all events except for last...
+								}
+							}
+						?>
 					]
 				});
 				calendar.render();
