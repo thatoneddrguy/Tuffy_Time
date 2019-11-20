@@ -28,13 +28,6 @@
 					plugins: [ 'timeGrid' ],
 					allDaySlot: false,
 					events: [
-						{
-							title: 'test',
-							daysOfWeek: ['1', '2'],
-							startTime: '09:00:00',
-							endTime: '12:00:00',
-							color: '#1089ff'
-						},
 						<?php
 							$result = mysqli_query($link, "SELECT * FROM SCHEDULE WHERE CWID=".$_SESSION['CWID'].";");
 
@@ -43,9 +36,28 @@
 								while ($row = $result->fetch_array(MYSQLI_ASSOC))
 								{
 									echo "{";
-									echo "daysOfWeek: ['1'],";  //echo "<td>".$row["DAY"];
+									echo "daysOfWeek: ['";
+									switch ($row["DAY"]) {
+										case 'M':
+											echo '1';
+											break;
+										case 'T':
+											echo '2';
+											break;
+										case 'W':
+											echo '3';
+											break;
+										case 'R':
+											echo '4';
+											break;
+										case 'F':
+											echo '5';
+											break;
+									}
+									echo "'],";  //echo "<td>".$row["DAY"];
 									echo "startTime: '".$row["START_TIME"]."',";
-									echo "endTime: '".$row["END_TIME"]."'";
+									echo "endTime: '".$row["END_TIME"]."',";
+									echo "color: '#1089ff'";
 									echo "}";
 									echo ",";  // add ',' for all events except for last...
 								}
@@ -61,27 +73,6 @@
 		<?php include "include/header.php" ?>
 		<br>
         <h1><?php echo $name ?>'s Weekly Schedule</h1>
-		<?php
-			$result = mysqli_query($link, "SELECT * FROM SCHEDULE WHERE CWID=".$_SESSION['CWID'].";");
-
-			if(mysqli_num_rows($result) == 0)  // no CWID match in EMPLOYEES table
-			{
-				echo "No schedule found for ".$name;
-			}
-			else
-			{
-				echo "<table>";
-				while ($row = $result->fetch_array(MYSQLI_ASSOC))
-				{
-					echo "<tr>";
-					echo "<td>".$row["DAY"];
-					echo "<td>".$row["START_TIME"];
-					echo "<td>".$row["END_TIME"];
-					echo "</tr>";
-				}
-				echo "</table>";
-			}
-		?>
 		<div id='calendar'></div>
     </body>
 
