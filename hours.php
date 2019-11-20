@@ -25,7 +25,11 @@
 			}
 			else
 			{
-				echo "<table>";
+				echo "<table id='hours-table'>";
+				echo "<tr>";
+				echo "<th>Clocked In</th>";
+				echo "<th>Clocked Out</th>";
+				echo "</tr>";
 				while ($row = $result->fetch_array(MYSQLI_ASSOC))
 				{
 					echo "<tr>";
