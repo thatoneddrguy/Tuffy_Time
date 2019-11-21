@@ -14,7 +14,7 @@
             var hours = current.getHours();
             var minutes = current.getMinutes();
             var seconds = current.getSeconds();
-            var ampm = hours >= 12 ? 'pm' : 'am';
+            var ampm = hours >= 12 ? 'PM' : 'AM';
             hours = hours % 12; // make it 12 hour format
             hours = hours ? hours : 12; // if its hour '0' it should be '12'
             minutes = minutes < 10 ? '0' + minutes : minutes; // if minutes is less than 10 then add 0

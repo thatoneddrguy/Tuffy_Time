@@ -83,6 +83,9 @@ html , .index-body {
     left: 0;
 }
 
+h1 {
+    margin-left: 12px;
+}
 
 /* Set up for navigation bar */
 ul {
@@ -181,7 +184,7 @@ h1 {
 
 
 #hours-table tr:nth-child(even) {
-    background-color: #cccccc;
+    background-color: #ecfcff;
 }
 
 #hours-table tr:hover {
@@ -195,4 +198,10 @@ h1 {
     text-align: left;
     background-color: #1089ff;
     color: white;
+}
+
+/* ===================================================== */
+/* Styles for Calendar */
+#calendar {
+    margin-left: 12px;
 }

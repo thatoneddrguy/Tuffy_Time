@@ -17,7 +17,7 @@
 		<br>
         <h1><?php echo $name ?>'s Logged Hours</h1>
 		<?php
-			$result = mysqli_query($link, "SELECT * FROM HOURS_WORKED WHERE CWID=".$_SESSION['CWID']." ORDER BY CLOCK_IN ASC;");
+			$result = mysqli_query($link, "SELECT DATE(CLOCK_IN), TIME_FORMAT(TIME(CLOCK_IN), '%r'), TIME_FORMAT(TIME(CLOCK_OUT), '%r') FROM HOURS_WORKED WHERE CWID=".$_SESSION['CWID']." ORDER BY CLOCK_IN ASC;");
 
 			if(mysqli_num_rows($result) == 0)  // no CWID match in EMPLOYEES table
 			{
@@ -27,14 +27,16 @@
 			{
 				echo "<table id='hours-table'>";
 				echo "<tr>";
+				echo "<th>Date</th>";
 				echo "<th>Clocked In</th>";
 				echo "<th>Clocked Out</th>";
 				echo "</tr>";
 				while ($row = $result->fetch_array(MYSQLI_ASSOC))
 				{
 					echo "<tr>";
-					echo "<td>".$row["CLOCK_IN"];
-					echo "<td>".$row["CLOCK_OUT"];
+					echo "<td>".$row["DATE(CLOCK_IN)"];
+					echo "<td>".$row["TIME_FORMAT(TIME(CLOCK_IN), '%r')"];
+					echo "<td>".$row["TIME_FORMAT(TIME(CLOCK_OUT), '%r')"];
 					echo "</tr>";
 				}
 				echo "</table>";
