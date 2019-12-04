@@ -1,24 +1,42 @@
 <?php
-	session_start();
+class Connection
+{
+	public $endpoint = 'tuffy-time.c17u2x0cmg40.us-east-1.rds.amazonaws.com';
+	public $username = 'admin';
+	public $password = 'ywC3k62WU9Uq';
+	public $dbname = 'Tuffy-Time';
+	public $link;
 
-	if(isset($_POST['cwid']))
+	function connect()
 	{
-		$_SESSION['loggedIn'] = true;
+		$this->link = mysqli_connect($this->endpoint, $this->username, $this->password, $this->dbname);
+		if(!$this->link)
+		{
+			die("<!--Could not connect: ".mysqli_error()."-->");
+		}
+		echo "<!--Connected successfully.-->";
 	}
 
-	if(empty($_SESSION['loggedIn']))
+	function login()
 	{
-		header('Location: index.php');
+		if(isset($_POST['cwid']))
+		{
+			$_SESSION['loggedIn'] = true;
+		}
 	}
 
-	$endpoint = 'tuffy-time.c17u2x0cmg40.us-east-1.rds.amazonaws.com';
-	$username = 'admin';
-	$password = 'ywC3k62WU9Uq';
-	$dbname = 'Tuffy-Time';
-	$link = mysqli_connect($endpoint, $username, $password, $dbname);
-	if(!$link)
+	// check 'loggedIn' session variable; if it does not exist, force client back to index.php
+	function validate_logged_in()
 	{
-		die("<!--Could not connect: ".mysqli_error()."-->");
+		if(empty($_SESSION['loggedIn']))
+		{
+			header('Location: index.php');
+		}
 	}
-	echo "<!--Connected successfully.-->";
+}
+
+session_start();
+$connection = new Connection;
+$connection->connect();
+$connection->validate_logged_in();
 ?>
