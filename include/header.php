@@ -4,7 +4,13 @@
     {
         if (confirm('Are you sure you want to clock in?'))
         {
-            window.open("clockIn.php", "_self");
+            //window.open("clockIn.php", "_self");
+            var xhttp;
+            xhttp = new XMLHttpRequest();
+            xhttp.open("GET","clockIn.php",true);
+            xhttp.send();
+            location.reload();
+            alert("You are now clocked in!");
         }
     }
 
@@ -13,7 +19,13 @@
     {
         if (confirm('Are you sure you want to clock out?'))
         {
-            window.open("clockOut.php", "_self");
+            //window.open("clockOut.php", "_self");
+            var xhttp;
+            xhttp = new XMLHttpRequest();
+            xhttp.open("GET","clockOut.php",true);
+            xhttp.send();
+            location.reload();
+            alert("You are now clocked out. Have a good day!");
         }
     }
 
