@@ -4,6 +4,17 @@
     {
         if (confirm('Are you sure you want to clock in?'))
         {
+            var test;
+            test = new XMLHttpRequest();
+            test.responseType = 'json';
+            test.open("GET","clockStatus.php",true);
+            test.send();
+            console.log(test.status);
+            if (test.status == 200)
+            {
+                alert("You are already clocked in!");
+            }
+
             //window.open("clockIn.php", "_self");
             var xhttp;
             xhttp = new XMLHttpRequest();
