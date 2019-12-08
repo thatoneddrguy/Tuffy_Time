@@ -28,7 +28,6 @@
                         xhttp = new XMLHttpRequest();
                         xhttp.open("GET","clockIn.php",true);
                         xhttp.send();
-                        xhttp.close();
                         location.reload();
                     }
                 }
@@ -62,7 +61,6 @@
                         xhttp = new XMLHttpRequest();
                         xhttp.open("GET","clockOut.php",true);
                         xhttp.send();
-                        xhttp.close();
                         location.reload();
                     }
                 }
