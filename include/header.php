@@ -1,27 +1,47 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script>
     // clock in function
     function clockIn()
     {
         if (confirm('Are you sure you want to clock in?'))
         {
-            var test;
-            test = new XMLHttpRequest();
-            test.responseType = 'json';
-            test.open("GET","clockStatus.php",true);
-            test.send();
-            console.log(test.status);
-            if (test.status == 200)
+            var url = "clockStatus.php";
+            $.ajax(url,
             {
-                alert("You are already clocked in!");
-            }
+                statusCode: 
+                {
+                    200: function() 
+                    {
+                        alert("You are already clocked in.");
+                    }
+                }
+            });
+
+            $.ajax(url,
+            {
+                statusCode: 
+                {
+                    303: function()
+                    {
+                        alert("You are now clocked in!");
+                        var xhttp;
+                        xhttp = new XMLHttpRequest();
+                        xhttp.open("GET","clockIn.php",true);
+                        xhttp.send();
+                        xhttp.close();
+                        location.reload();
+                    }
+                }
+            });      
+
 
             //window.open("clockIn.php", "_self");
-            var xhttp;
+            /*var xhttp;
             xhttp = new XMLHttpRequest();
             xhttp.open("GET","clockIn.php",true);
             xhttp.send();
             location.reload();
-            alert("You are now clocked in!");
+            alert("You are now clocked in!");*/
         }
     }
 
@@ -30,13 +50,42 @@
     {
         if (confirm('Are you sure you want to clock out?'))
         {
+            var url = "clockStatus.php";
+            $.ajax(url,
+            {
+                statusCode: 
+                {
+                    200: function() 
+                    {
+                        alert("You are now clocked out. Have a good day!");
+                        var xhttp;
+                        xhttp = new XMLHttpRequest();
+                        xhttp.open("GET","clockOut.php",true);
+                        xhttp.send();
+                        xhttp.close();
+                        location.reload();
+                    }
+                }
+            });
+
+            $.ajax(url,
+            {
+                statusCode: 
+                {
+                    303: function()
+                    {
+                        alert("You are already clocked out.");
+                    }
+                }
+            });
+
             //window.open("clockOut.php", "_self");
-            var xhttp;
+           /*var xhttp;
             xhttp = new XMLHttpRequest();
             xhttp.open("GET","clockOut.php",true);
             xhttp.send();
             location.reload();
-            alert("You are now clocked out. Have a good day!");
+            alert("You are now clocked out. Have a good day!");*/
         }
     }
 
