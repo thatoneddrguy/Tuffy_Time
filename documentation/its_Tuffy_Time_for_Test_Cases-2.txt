@@ -1,0 +1,150 @@
+Test Cases TuffyTime
+==============================================================================
+Testing CWID login 
+	-Check for Interaction with AWS database
+	-Check for potential exploits, invalid logins
+	-Check if actual login values work
+
+1) Login using null Values
+	Attempt to force login using empty fields {Blank Argument}
+
+	--Events
+Entry Condition
+	1) Access website login
+Flow of Events
+	2) Attempt to login with an empty field
+	3) Webpage detects an empty field flag
+Exit Condition	
+	4) Error Message "Please fill out this field"
+
+
+2) Login using invalid values 	
+	Attempt to use an invalid combination of characters to login
+
+	--Events
+Entry Condition
+	1) Access website login
+Flow of Events
+	2) Attempt to login with presumably invalid characters 
+	3) Webpage detects the field is properly filled 
+	4) Sends information to Database
+	5) Database Compares value to existing entries
+Exit Condition	
+	5) Error Message "Invalid CWID, try again."
+
+
+3) Login using valid values 	
+	Attempt to use a valid combination of characters to login
+
+	--Events 
+
+Entry Condition
+	1) Access website login
+Flow of Events
+	2) Attempt to login with existing CWID 
+	3) Webpage detects the field is properly filled 
+	4) Sends information to Database
+	5) Database Compares value to existing entries
+Exit Condition	
+	5) Home Page 
+
+=============================================================================
+
+Testing Homepage features 
+
+	--Events
+1) Clocking in
+	User Attempts to clock into work, assuming not currently clocked in
+
+
+Entry Condition
+	1) User successfully  logs in
+Flow of events
+	2) User Accesses Home page
+	3) User clicks the Clock in prompt 
+	4) Database is updated, User is clocked in
+Exit Condition
+	5) User Logs off 
+
+
+
+2) Clocking out
+	User Attempts to clock out, assuming already clocked in
+
+Entry Condition
+	1) User Accesses their homepage after logging in
+Flow of events
+	2) User Accesses Home page
+	3) User clicks the Clock outprompt 
+	4) Database is updated, User is clocked out
+Exit Condition
+	5) User Logs off 
+
+
+Clocking in while clocked in
+	User Attempts to clock in, assuming already clocked in 
+
+Entry condition
+	1) User is already clocked in on homepage
+Flow of events
+	2) User attempts to clock in 
+	3) Error flag, prompts user that they are already logged in
+Exit Condition
+	4) User Logs off
+
+Clocking out while clocked out
+	User attempts to clock out while already clocked out
+
+Entry Condition 
+	1) User is not clocked in on homepage
+Flow of Events 
+	2) User attempts to clock out
+	3) Clock out flag is already set, Unable to update Clockout without
+		initially being clocked in
+Exit Condition 
+	4) User Logs off 
+
+
+Attempting to reenter website after logging out using "Previous page"
+	
+Entry Condition
+	1) User has recently logged out
+Flow of Events
+	2) User attempts to access homepage while not logged in 
+	3) Session flag is false
+	4) User is unable to access page while not properly logged in
+Exit Condition
+	5) User stops
+=============================================================================
+
+
+Testing in different browsers
+	- Access login and homepages from different browsers
+	- See how different browsers interact with our website
+-mostly just issues / inconsistancies 
+FireFox 
+
+	-User Prompts 
+		- Reoccuring Boxes prompt user to 
+	To display this page, Firefox must send information that will 
+	repeat any action (such as a search or order confirmation)
+	that was performed earlier.
+	
+Microsoft Edge
+
+	-User Prompts 
+		- webpage does not automatically update after updating
+	the information. Must refresh page to reflect changes enacted 
+	by the user
+	
+Safari
+	-Logging in
+		-user has to put their CWID twice to log in to the
+		portal
+
+Google Chrome
+	-Loggin in
+		-user has to put their CWID twice to log in to the
+		portal
+
+	
