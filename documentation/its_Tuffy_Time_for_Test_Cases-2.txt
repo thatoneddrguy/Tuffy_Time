@@ -121,30 +121,25 @@ Exit Condition
 Testing in different browsers
 	- Access login and homepages from different browsers
 	- See how different browsers interact with our website
--mostly just issues / inconsistancies 
-FireFox 
+	- mostly just issues / inconsistancies 
 
-	-User Prompts 
+FireFox 
+	- User Prompts 
 		- Reoccuring Boxes prompt user to 
-	To display this page, Firefox must send information that will 
-	repeat any action (such as a search or order confirmation)
-	that was performed earlier.
+		"To display this page, Firefox must send information that will 
+		repeat any action (such as a search or order confirmation)
+		that was performed earlier."
 	
 Microsoft Edge
-
-	-User Prompts 
+	- User Prompts 
 		- webpage does not automatically update after updating
 	the information. Must refresh page to reflect changes enacted 
 	by the user
 	
 Safari
-	-Logging in
-		-user has to put their CWID twice to log in to the
-		portal
+	- No browser-specific issues reported
 
 Google Chrome
-	-Loggin in
-		-user has to put their CWID twice to log in to the
-		portal
+	- No browser-specific issues reported
 
 	
