@@ -38,5 +38,6 @@ class Connection
 session_start();
 $connection = new Connection;
 $connection->connect();
+$connection->login();
 $connection->validate_logged_in();
 ?>

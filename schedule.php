@@ -25,6 +25,9 @@
 				var calendarEl = document.getElementById('calendar');
 
 				var calendar = new FullCalendar.Calendar(calendarEl, {
+					// contentHeight: 500,
+					// minTime: '09:00:00',
+					// maxTime: '18:00:00',
 					plugins: [ 'timeGrid' ],
 					allDaySlot: false,
 					events: [

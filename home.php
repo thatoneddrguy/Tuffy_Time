@@ -7,7 +7,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 		<?php include 'include/connect.php'; ?>
 		<?php
-		$connection->login();
+		//$connection->login();
 		if (isset($_POST["cwid"]))
 		{
 			$result = mysqli_query($connection->link, "SELECT * FROM EMPLOYEES WHERE CWID=".$_POST["cwid"].";");
