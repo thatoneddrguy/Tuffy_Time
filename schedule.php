@@ -32,7 +32,7 @@
 					allDaySlot: false,
 					events: [
 						<?php
-							$result = mysqli_query($connection->link, "SELECT * FROM SCHEDULE WHERE CWID=".$_SESSION['CWID'].";");
+							$result = mysqli_query($connection->link, "CALL SelectSchedule(".$_SESSION['CWID'].");");
 
 							if(mysqli_num_rows($result) != 0)  // at least one CWID match in EMPLOYEES table
 							{
